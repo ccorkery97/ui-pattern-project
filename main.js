@@ -1,4 +1,5 @@
 const slideshow = document.querySelector('.slideshow')
+//addSlide()
 const slides = Array.from(slideshow.querySelectorAll('.slide'))
 const slideCount = slides.length
 
@@ -66,8 +67,8 @@ slideContents.forEach(element => {
 function addSlide() {
     let extraSlide = document.createElement('li')
     let extraSlideContent = document.createElement('p')
-    extraSlide.appendChild(extraSlideContent)
     slideshow.appendChild(extraSlide)
+    extraSlide.appendChild(extraSlideContent)
     extraSlide.classList.add('slide')
     extraSlideContent.classList.add('slideContent')
 }
