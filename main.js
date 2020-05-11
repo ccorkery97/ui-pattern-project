@@ -6,21 +6,47 @@ const slideWidth = slides[0].getBoundingClientRect().width
 
 
 rightButton = document.querySelector('.right')
-rightButton.addEventListener('click', transitionSlide)
+rightButton.addEventListener('click', transitionSlideRight)
+
+leftButton = document.querySelector('.left')
+leftButton.addEventListener('click', transitionSlideLeft)
 
 let currentSlide = 1;
 let currentPosition =0;
 
 let transformOption
-function transitionSlide() {
+function transitionSlideRight() {
   if (currentSlide < slideCount) {
     currentPosition -= slideWidth
     transformOption = `translateX(${currentPosition}px)`
     slideshow.style.transform = transformOption
     currentSlide++
-  } 
+    changeButtonColor()
+  }  
 }
 
+function transitionSlideLeft() {
+    if (currentSlide > 1) {
+        currentPosition += slideWidth
+        transformOption = `translateX(${currentPosition}px)`
+        slideshow.style.transform = transformOption
+        currentSlide--
+        changeButtonColor()
+    }
+}
+
+function changeButtonColor() {
+    if (currentSlide == 1) {
+        leftButton.style.backgroundColor = "grey"
+        rightButton.style.backgroundColor = "rgb(64,64,64)"
+    } else if (currentSlide == slideCount) {
+        leftButton.style.backgroundColor = "rgb(64,64,64)"
+        rightButton.style.backgroundColor = "grey"
+    } else if (currentSlide > 1) {
+        leftButton.style.backgroundColor = "rgb(64,64,64)"
+        rightButton.style.backgroundColor = "rgb(64,64,64)"
+    } 
+}
 
 
 
