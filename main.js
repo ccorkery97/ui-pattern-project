@@ -62,3 +62,13 @@ slideContents.forEach(element => {
         element.textContent = data.joke
     })
 });
+
+function addSlide() {
+    let extraSlide = document.createElement('li')
+    let extraSlideContent = document.createElement('p')
+    extraSlide.appendChild(extraSlideContent)
+    slideshow.appendChild(extraSlide)
+    extraSlide.classList.add('slide')
+    extraSlideContent.classList.add('slideContent')
+}
+
