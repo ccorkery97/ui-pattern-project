@@ -21,17 +21,19 @@ main {
 .left {
     color: white;
     background-color: rgb(64,64,64);
+    width: 30px;
 }
 
 .right {
     color: white;
     background-color: rgb(64,64,64);
+    width: 30px;
 }
 
 .content {
     display: flex;
     border: 3px solid rgb(64,64,64);;
-    width: 550px;
+    width: 525px;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -58,4 +60,24 @@ main {
 
 p {
     text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px; 
 }
+
+.rightarrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .leftarrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px; 
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }

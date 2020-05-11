@@ -48,6 +48,17 @@ function changeButtonColor() {
     } 
 }
 
+dadJokes = 'https://icanhazdadjoke.com/'
+slideContents = document.querySelectorAll('.slideContent')
 
-
-
+slideContents.forEach(element => { 
+   fetch(dadJokes, {
+    headers: {
+        "Accept" : "application/json"
+    }
+})
+    .then(unparsed=> unparsed.json())
+    .then(data=> {
+        element.textContent = data.joke
+    })
+});
